@@ -4,7 +4,7 @@ import "./steps.css";
 const messages = [
   "Learn React ⚛️",
   "Apply for jobs 💼",
-  "Invest your new income 🤑"
+  "Invest your new income 🤑",
 ];
 
 export default function Steps() {
@@ -12,19 +12,19 @@ export default function Steps() {
   const [isOpen, setIsOpen] = useState(true);
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
   }
 
   function handleNext() {
-    if (step < messages.length) setStep(step + 1);
+    if (step < messages.length) setStep((s) => s + 1);
   }
 
   return (
-    <div>
+    <>
       <button
         className="close"
         onClick={() => {
-          setIsOpen(!isOpen);
+          setIsOpen((isopen) => !isOpen);
         }}
       >
         &times;
@@ -57,6 +57,6 @@ export default function Steps() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
